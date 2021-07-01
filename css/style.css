@@ -1,0 +1,298 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    font-family: Verdana;
+ }
+
+/* Настройка хедера */
+
+header{
+    display: block;
+    min-height: 10vh;  
+    font-family: Verdana;
+    font-size: 14pt;
+}
+
+/* Описание */
+
+.About{ 
+    padding: 15px 30px;
+    margin-top: 104px;
+    font-style: italic;
+    text-shadow: #60cfee 1px 1px 10px;
+    color: #f1f1f1;
+    background-color: black;
+}
+
+.About h1{
+    font-size: 18pt;
+    padding-bottom: 10px;
+}
+
+/* Навигационная панель */
+
+.Nav{
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgb(240, 240, 240);
+    justify-content: space-between; 
+}
+
+.Logo img{
+    height: 100px;
+    width: 100px;
+    transition: .5s;
+}
+
+.Nav_Menu{
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    font-size: 16pt;
+}
+
+.Nav_Menu li{
+    border-radius: 5%;
+    padding: 20px;
+}
+
+.Nav_Menu img{
+    height: 30px;
+    width: 30px;
+}
+
+.Nav_Menu li, a{
+    display: inline-block;
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+
+}
+
+.Nav_Menu li:hover {
+    transition: all .8s ease;
+    background: #00ADE4;
+}
+
+/* Кнопка меню */
+
+.toggle-menu {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-top: 32px;
+    margin-right: 20px;
+    background: #00ADE4;
+    cursor: pointer;
+ }
+ .toggle-menu span {
+    display: block;
+    position: absolute;
+    top: 19px;
+    left: 8px;
+    right: 8px;
+    height: 2px;
+    background: white;
+ }
+ .toggle-menu span:before, .toggle-menu span:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+ }
+ .toggle-menu span:before {
+    top: -10px;
+ }
+ .toggle-menu span:after {
+    bottom: -10px;
+ }
+ 
+ /*Скрытое меню(появляется по клику toggle-menu)*/
+ 
+.Nav_Menu.active {
+    max-height: 180px;
+    transition: .7s ease-in-out;
+ }
+
+/* Навигация по странице */
+
+.Heading{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 30px;
+    font-size: 20pt;
+    background: linear-gradient(0deg, #32b4e7, rgb(20, 37, 197));
+}
+
+.Begining, .Records, .Wartime, 
+.AfterWar, .CompanyNow{
+    margin: 30px;
+    padding: 0px;
+    text-align: center;
+    text-shadow: #f6fdff 1px 1px 10px;
+}
+
+.Heading img{
+    border-radius: 10%;
+    transition: .5s;
+}
+
+.Heading img:hover, .Logo img:hover {
+    transform: scale(1.1);
+    transition: .8s;
+}
+
+/* Размеры изображений из хединга */
+
+.Begining img{
+    height: 200px;
+    width: 260px;
+}  
+
+.Records img{
+    height: 200px;
+    width: 250px;
+}
+
+.Wartime img{
+    height: 200px;
+    width: 300px;
+}
+
+.AfterWar img{
+    height: 200px;
+    width: 270px;
+}
+
+.CompanyNow img{
+    height: 200px;
+    width: 280px;
+}
+
+/* Основное содержание страницы */
+
+main{
+    padding: 15px 20px 0 20px;
+    font-size: 14pt;
+    text-shadow: #ffffff 1px 1px 10px;
+    background: radial-gradient(farthest-corner at 10% 5%, rgb(46, 46, 46), rgb(168, 168, 168));
+}
+
+#Begining, #Records,
+#Wartime, #AfterWar,
+#CompanyNow{
+    padding: 15px 50px;
+    margin-top: 10px;
+    background: linear-gradient(35deg, rgb(231, 231, 231), rgb(182, 182, 182));
+}
+#Begining p, h2, #Records p, h2,
+#Wartime p, h2, #AfterWar p, h2,
+#CompanyNow p, h2{
+    padding: 10px 25px;
+}
+
+.Footer{
+    display: block;
+    text-align: center;   
+    padding: 15px;
+    background: rgb(240, 240, 240);
+}
+
+.Copyright{
+    font-size: 12pt;
+}
+
+/* Адаптация сайта */
+
+@media(max-width: 771px){
+    .Begining img{
+        height: 150px;
+        width: 220px;
+    }
+    .Records img{
+        height: 140px;
+        width: 210px;
+    }
+    .Wartime img{
+        height: 150px;
+        width: 230px;
+    }
+    .AfterWar img{
+        height: 170px;
+        width: 230px;
+    }
+    .CompanyNow img{
+        height: 150px;
+        width: 240px;
+    }
+}
+
+@media(max-width: 540px){
+    main{      
+        padding: 5px 8px 0 5px;
+    }
+
+    #Begining, #Records, #Wartime, 
+    #AfterWar, #CompanyNow{
+        padding: 15px 15px;
+        margin-top: 5px;
+    }
+    
+    #Begining p, h2, #Records p, h2, 
+    #Wartime p, h2, #AfterWar p, h2, 
+    #CompanyNow p, h2{
+        padding: 3px 10px;
+    }
+    header, main{
+        font-size: 12pt;
+    }
+}
+
+@media(max-width: 410px){
+    header, main, .Copyright{
+        font-size: 10pt;
+    }
+   
+}
+
+@media(max-width: 861px){
+    .toggle-menu{
+        display: block;       
+    }
+    .Nav_Menu li, .UpButton{
+        display: block;
+        text-align: center;
+        padding: 5px;
+    }
+    .Nav_Menu{
+        background: rgb(240, 240, 240);
+        position: absolute;
+        overflow: hidden;
+        top: 100px;
+        right: 0;
+        left: 0;
+        max-height: 0;
+        justify-content: center;
+        font-size: 12pt;
+        padding-right: 0;
+        transition: .5s ease-in-out;
+    }
+}
+
+
+  
+  
+  
